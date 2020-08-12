@@ -43,16 +43,23 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'user/auth/create-token' => 'user/auth/token/create',
             ],
         ],
-//        */
     ],
     'params' => $params,
+    'modules' => [
+        'shop' => [
+            'class' => app\modules\shop\Module::class,
+        ],
+        'user' => [
+            'class' => app\modules\user\Module::class,
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {

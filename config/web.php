@@ -52,7 +52,8 @@ $config = [
                 'POST user/auth/create-generate' => 'user/auth/token/generate',
                 // Shop Module
                 'GET store/product' => 'shop/product/index',
-                'GET POST store/product/create' => 'shop/product/create',
+                'GET store/product/create' => 'shop/product/create',
+                'POST store/product/create' => 'shop/product/create',
             ],
         ],
     ],

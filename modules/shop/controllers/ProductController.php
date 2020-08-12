@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace app\modules\shop\controllers;
 
-use app\modules\shop\modules\ProductAddModel;
+use app\modules\shop\models\ProductAddModel;
 use yii\web\Controller;
 
 class ProductController extends Controller
@@ -18,6 +18,12 @@ class ProductController extends Controller
     {
         $model = new ProductAddModel();
 
-        return $this->render('create', compact('model'));
+        if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
+            $attributes = $model->attributes();
+        }
+
+        $queryParams = \Yii::$app->getRequest()->getQueryParams();
+
+        return $this->render('create', compact('model', 'queryParams'));
     }
 }

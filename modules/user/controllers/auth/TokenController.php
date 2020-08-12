@@ -10,11 +10,16 @@ class TokenController extends Controller
 {
     public function actionCreate()
     {
+        return $this->render('index');
+    }
+
+    public function actionGenerate()
+    {
         if (\Yii::$app->request->post()) {
             $token = \Yii::$app->security->generateRandomString(rand(25, 50));
             \Yii::$app->session->setFlash('user-token', $token);
         }
 
-        return $this->render('index');
+        return $this->redirect('/user/auth/create-token');
     }
 }

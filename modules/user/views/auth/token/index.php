@@ -1,20 +1,17 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-
-/* @var $model app\models\ContactForm */
 
 use yii\bootstrap\Alert;
 use yii\helpers\Html;
 
-$this->title = 'Contact';
+$this->title = 'User token generate';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="User-default-index">
     <h1>Generate user token</h1>
 
-    <?= Html::beginForm(['/user/auth/token/create'], 'post') ?>
+    <?= Html::beginForm(['/user/auth/token/generate'], 'post') ?>
     <?= Html::submitButton('Generate'); ?>
     <?= Html::endForm() ?>
 

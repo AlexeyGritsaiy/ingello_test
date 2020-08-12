@@ -47,7 +47,12 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'user/auth/create-token' => 'user/auth/token/create',
+                // User Module
+                'GET user/auth/create-token' => 'user/auth/token/create',
+                'POST user/auth/create-generate' => 'user/auth/token/generate',
+                // Shop Module
+                'GET store/product' => 'shop/product/index',
+                'GET POST store/product/create' => 'shop/product/create',
             ],
         ],
     ],
